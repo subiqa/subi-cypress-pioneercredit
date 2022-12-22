@@ -1,0 +1,14 @@
+{
+    "hero_banner_img_path": ".component__core > :nth-child(1) > img",
+    "hero_banner_img_path_value": "/media/15ef0m43/home_banner.png",
+    "hero_banner_h1_path": ".component__core > :nth-child(2) > h1",
+    "hero_banner_h1_text": "Let’s put an end to debt stress",
+    "hero_banner_icon_path": ".component__core > :nth-child(2) > a.hero-banner__vertical-button",
+
+    "faq_title_path": ""
+
+
+
+    
+
+}
