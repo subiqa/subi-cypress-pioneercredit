@@ -1,7 +1,11 @@
 class Header {
 
-    getHeaderLogo(){
+    getHeaderLogoImg(){
         return cy.get('.header .header__wrapper a[href="/"] .logo')
+    }
+
+    getHeaderLogo(){
+        return cy.get('.header .header__wrapper a')
     }
 
     getCustomerSupportMenu(){
@@ -80,8 +84,20 @@ class Header {
         return cy.get('#nav > .nav__quicklinks > .btn--secondary')
     }
 
+    getHeaderYourAccountButtonMobile(){
+        return cy.get('.nav-mobile > .nav__quicklinks > .btn--secondary')
+    }
+
     getHeaderContatUsButton(){
         return cy.get('#nav > .nav__quicklinks > .btn--tertiary')
+    }
+
+    getHeaderContatUsButtonMobile(){
+        return cy.get('.nav-mobile > .nav__quicklinks > .btn--tertiary')
+    }
+
+    getCustomerSupportMenuMobile(){
+        return cy.get('.js-nav-mobile > ul > li#nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c')
     }
 
 }

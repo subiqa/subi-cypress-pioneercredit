@@ -11,18 +11,33 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('clickMobileHamburgerMenu', () => {
+    cy.get('.js-nav-toggle')
+        .click()
+})
+
 Cypress.Commands.add('headerSearch', (keywords) => { 
+    cy.get('.js-btn-search-box')
+        .click()
+    cy.wait(1000)    
     cy.get('form > #searchQuery')
         .type(keywords)
     cy.get('#nav > .search-box > .search-box__container > form > .search-box__btn')
         .click()
-    cy.wait(3000)
-    cy.url()
-        .should('include','/search/?q=')
-    cy.get('.site-search-results__summary > h3')
-        .should('include.text','matching results for "' + keywords + '".')
+    cy.wait(1500)
+})
+
+Cypress.Commands.add('headerSearchMobile', (keywords) => {
+    cy.get('input#searchQueryMobile')
+        .click()
+    cy.wait(1000)
+    cy.get('input#searchQueryMobile')
+        .type(keywords)
+    cy.get('.js-nav-mobile > .js-search-box > .search-box__container > form > .search-box__btn')
+        .click()
 
 })
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })

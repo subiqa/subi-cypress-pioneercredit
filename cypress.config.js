@@ -10,6 +10,6 @@ module.exports = defineConfig({
     },
     env: {
       base_url: 'https://pioneercredit.com.au/'
-    },
-    specPattern: 'cypress/integration/PioneerCredit/*.js'},
+    }
+  }
 });
