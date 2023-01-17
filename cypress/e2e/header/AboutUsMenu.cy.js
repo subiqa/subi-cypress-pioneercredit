@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 import Header from '../../integration/pageObjects/Header'
 
-describe('Customer Support menu - Desktop', function() 
+describe('About Us menu - Desktop', function() 
 {
     beforeEach(function () {
         cy.fixture('pioneercreditheader').then(function (data) {
@@ -11,123 +11,123 @@ describe('Customer Support menu - Desktop', function()
         cy.visit(Cypress.env('base_url'))
       })
  
-    it('Customer Support menu has correct text',function() {
+    it('About Us menu has correct text',function() {
         const header = new Header() 
-        header.getCustomerSupportMenu()
+        header.getAboutUsMenu()
             .find(this.data.level1_menu_text_path)
-            .should('have.text',this.data.customer_support_menu_text_value)
+            .should('have.text',this.data.about_us_menu_text_value)
     })
 
-    it('How We Help submenu has correct text and url', function() {
+    it('Who We Are submenu has correct text and url', function() {
         const header = new Header() 
-        header.getCustomerSupportMenu()
+        header.getAboutUsMenu()
             .click()
         //Verify the URL is correct
-        header.getHowWeHelpMenu()
+        header.getWhoWeAreMenu()
             .find(this.data.level2_menu_a_path)
             .should('be.visible')
-            .and('have.attr', 'href',this.data.how_we_help_menu_a_path_value)
+            .and('have.attr', 'href',this.data.who_we_are_menu_a_path_value)
         //Verify the icon is correct
-        header.getHowWeHelpMenu()
+        header.getWhoWeAreMenu()
             .find(this.data.level2_menu_icon_path)
             .invoke('attr', 'src')
-            .should('eq',this.data.how_we_help_menu_icon_path_value)
+            .should('eq',this.data.who_we_are_menu_icon_path_value)
         //Verify the title is correct
-        header.getHowWeHelpMenu()
+        header.getWhoWeAreMenu()
             .find(this.data.level2_menu_title_path)
-            .should('have.text',this.data.how_we_help_menu_title_path_value)
+            .should('have.text',this.data.who_we_are_menu_title_path_value)
         //Verify the small title is correct
-        header.getHowWeHelpMenu()
+        header.getWhoWeAreMenu()
             .find(this.data.level2_menu_title_small_path)
-            .should('have.text',this.data.how_we_help_menu_title_small_path)
+            .should('have.text',this.data.who_we_are_menu_title_small_path_value)
     })
         
-    it('Support Hub submenu has correct text and url', function() {
+    it('Our Leadership Team submenu has correct text and url', function() {
         const header = new Header() 
-        header.getCustomerSupportMenu()
+        header.getAboutUsMenu()
             .click()
         //Verify the URL is correct
-        header.getSupportHubMenu()
+        header.getOurLeadershipMenu()
             .find(this.data.level2_menu_a_path)
             .should('be.visible')
-            .and('have.attr', 'href', this.data.support_hub_menu_a_path_value)
+            .and('have.attr', 'href', this.data.our_leadership_menu_a_path_value)
         //Verify the icon is correct
-        header.getSupportHubMenu()
+        header.getOurLeadershipMenu()
             .find(this.data.level2_menu_icon_path)
             .invoke('attr', 'src')
-            .should('eq',this.data.support_hub_menu_icon_path_value)
+            .should('eq',this.data.our_leadership_menu_icon_path_value)
         //Verify the title is correct
-        header.getSupportHubMenu()
+        header.getOurLeadershipMenu()
             .find(this.data.level2_menu_title_path)
-            .should('have.text',this.data.support_hub_menu_title_path_value)
+            .should('have.text',this.data.our_leadership_menu_title_path_value)
         //Verify the small title is correct
-        header.getSupportHubMenu()
+        header.getOurLeadershipMenu()
             .find(this.data.level2_menu_title_small_path)
-            .should('have.text',this.data.support_hub_menu_title_small_path)
+            .should('have.text',this.data.our_leadership_menu_title_small_path_value)
     })
 
-    it('FAQs submenu has correct text and url', function() {
+    it('Work With Us submenu has correct text and url', function() {
         const header = new Header() 
-        header.getCustomerSupportMenu()
+        header.getAboutUsMenu()
             .click()
         //Verify the URL is correct
-        header.getFAQMenu()
+        header.getWorkWithUsMenu()
             .find(this.data.level2_menu_a_path)
             .should('be.visible')
-            .and('have.attr', 'href', this.data.faq_menu_a_path_value)
+            .and('have.attr', 'href', this.data.work_with_us_menu_a_path_value)
         //Verify the icon is correct
-        header.getFAQMenu()
+        header.getWorkWithUsMenu()
             .find(this.data.level2_menu_icon_path)
             .invoke('attr', 'src')
-            .should('eq',this.data.faq_menu_icon_path_value)
+            .should('eq',this.data.work_with_us_menu_icon_path_value)
         //Verify the title is correct
-        header.getFAQMenu()
+        header.getWorkWithUsMenu()
             .find(this.data.level2_menu_title_path)
-            .should('have.text',this.data.faq_menu_title_path_value)
+            .should('have.text',this.data.work_with_us_menu_title_path_value)
         //Verify the small title is correct
-        header.getFAQMenu()
+        header.getWorkWithUsMenu()
             .find(this.data.level2_menu_title_small_path)
-            .should('have.text',this.data.faq_menu_title_small_path)
+            .should('have.text',this.data.work_with_us_menu_title_small_path_value)
     })
 
-    it('Your Privacy submenu has correct text and url', function() {
+    it('Community submenu has correct text and url', function() {
         const header = new Header() 
-        header.getCustomerSupportMenu()
+        header.getAboutUsMenu()
             .click()
         //Verify the URL is correct
-        header.getYourPrivacyMenu()
+        header.getCommunityMenu()
             .find(this.data.level2_menu_a_path)
             .should('be.visible')
-            .and('have.attr', 'href', this.data.your_privacy_menu_a_path_value)
+            .and('have.attr', 'href', this.data.community_menu_a_path_value)
         //Verify the icon is correct
-        header.getYourPrivacyMenu()
+        header.getCommunityMenu()
             .find(this.data.level2_menu_icon_path)
             .invoke('attr', 'src')
-            .should('eq',this.data.your_privacy_menu_icon_path_value)
+            .should('eq',this.data.community_menu_icon_path_value)
         //Verify the title is correct
-        header.getYourPrivacyMenu()
+        header.getCommunityMenu()
             .find(this.data.level2_menu_title_path)
-            .should('have.text',this.data.your_privacy_menu_title_path_value)
+            .should('have.text',this.data.community_menu_title_path_value)
         //Verify the small title is correct
-        header.getYourPrivacyMenu()
+        header.getCommunityMenu()
             .find(this.data.level2_menu_title_small_path)
-            .should('have.text',this.data.your_privacy_menu_title_small_path)
+            .should('have.text',this.data.community_menu_title_small_path_value)
     })
 
-    it('Click and close Customer Support menu menu is working', function() {
+    it('Click and close About Us menu menu is working', function() {
         const header = new Header() 
-        header.getCustomerSupportMenu()
+        header.getAboutUsMenu()
             .click()
-        cy.get('#nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c')
+        cy.get('#nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764')
             .should('be.visible')
-        header.getCloseIconCustomerSupportMenu().click()
+        header.getCloseIconAboutUsMenu().click()
         cy.wait(2000)
-        cy.get('#nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c')
+        cy.get('#nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764')
             .should('not.be.visible')
     })     
 })
 
-describe('Customer Support menu - Mobile', function() 
+describe('About Us menu - Mobile', function() 
 {
     beforeEach(function () {
         cy.fixture('pioneercreditheader').then(function (data) {
@@ -137,137 +137,137 @@ describe('Customer Support menu - Mobile', function()
         cy.visit(Cypress.env('base_url'))
       })
  
-    it('Customer Support menu has correct text',function() {
+    it('About Us menu has correct text',function() {
         const header = new Header() 
         cy.clickMobileHamburgerMenu()
-        header.getCustomerSupportMenuMobile()
+        header.getAboutUsMenuMobile()
             .find('.js-nav-title')
             .should('be.visible')
-            .and('have.text',this.data.customer_support_menu_text_value)
+            .and('have.text',this.data.about_us_menu_text_value)
     })
 
-    it('How We Help submenu has correct text and url', function() {
+    it('Who We Are submenu has correct text and url', function() {
         const header = new Header() 
         cy.clickMobileHamburgerMenu()
         cy.wait(1000)
-        header.getCustomerSupportMenuMobile()
+        header.getAboutUsMenuMobile()
             .click()
         cy.wait(1000)
         //Verify the URL is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item')
             .scrollIntoView({ duration: 1000 })
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item')
             .should('be.visible')
-            .and('have.attr', 'href', this.data.how_we_help_menu_a_path_value)
+            .and('have.attr', 'href', this.data.who_we_are_menu_a_path_value)
         //Verify the icon is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .js-sub-nav > ul > :nth-child(2) > .js-nav-item > img')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .js-sub-nav > ul > :nth-child(2) > .js-nav-item > img')
             //.find(this.data.level2_menu_a_path)
             .should('be.visible')
-            .and('have.attr', 'src', this.data.how_we_help_menu_icon_path_value)
+            .and('have.attr', 'src', this.data.who_we_are_menu_icon_path_value)
         //Verify the title is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item > :nth-child(2) > .nav__title')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item > :nth-child(2) > .nav__title')
             .should('be.visible')
-            .and('have.text',this.data.how_we_help_menu_title_path_value)
+            .and('have.text',this.data.who_we_are_menu_title_path_value)
         //Verify the small title is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item > :nth-child(2) > small')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(2) > .js-nav-item > :nth-child(2) > small')
             .should('be.visible')
-            .and('have.text',this.data.how_we_help_menu_title_small_path)
+            .and('have.text',this.data.who_we_are_menu_title_small_path_value)
     })
         
-    it('Support Hub submenu has correct text and url', function() {
+    it('Our Leadership Team submenu has correct text and url', function() {
         const header = new Header() 
         cy.clickMobileHamburgerMenu()
         cy.wait(1000)
-        header.getCustomerSupportMenuMobile()
+        header.getAboutUsMenuMobile()
             .click()
         cy.wait(1000)
         //Verify the URL is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item')
             .scrollIntoView({ duration: 1000 })
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item')
             .should('be.visible')
-            .and('have.attr','href',this.data.support_hub_menu_a_path_value)
+            .and('have.attr','href',this.data.our_leadership_menu_a_path_value)
         //Verify the icon is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item > img')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item > img')
             .should('be.visible')
-            .and('have.attr', 'src',this.data.support_hub_menu_icon_path_value)
+            .and('have.attr', 'src',this.data.our_leadership_menu_icon_path_value)
         //Verify the title is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item > :nth-child(2) > .nav__title')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item > :nth-child(2) > .nav__title')
             .should('be.visible')
-            .and('have.text',this.data.support_hub_menu_title_path_value)
+            .and('have.text',this.data.our_leadership_menu_title_path_value)
         //Verify the small title is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item > :nth-child(2) > small')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(3) > .js-nav-item > :nth-child(2) > small')
             .should('be.visible')
-            .and('have.text',this.data.support_hub_menu_title_small_path)
+            .and('have.text',this.data.our_leadership_menu_title_small_path_value)
     })
 
-    it('FAQs submenu has correct text and url', function() {
+    it('Work With Us submenu has correct text and url', function() {
         const header = new Header() 
         cy.clickMobileHamburgerMenu()
         cy.wait(1000)
-        header.getCustomerSupportMenuMobile()
+        header.getAboutUsMenuMobile()
             .click()
         cy.wait(1000)
         //Verify the URL is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item')
             .scrollIntoView({ duration: 1000 })
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item')
             .should('be.visible')
-            .and('have.attr', 'href', this.data.faq_menu_a_path_value)    
+            .and('have.attr', 'href', this.data.work_with_us_menu_a_path_value)    
         //Verify the icon is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item > img')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item > img')
             .should('be.visible')
-            .and('have.attr', 'src', this.data.faq_menu_icon_path_value)
+            .and('have.attr', 'src', this.data.work_with_us_menu_icon_path_value)
         //Verify the title is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item > :nth-child(2) > .nav__title')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item > :nth-child(2) > .nav__title')
             .should('be.visible')
-            .and('have.text',this.data.faq_menu_title_path_value)
+            .and('have.text',this.data.work_with_us_menu_title_path_value)
         //Verify the small title is correct
-        cy.get(':nth-child(2) > #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c > #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item > :nth-child(2) > small')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(4) > .js-nav-item > :nth-child(2) > small')
             .should('be.visible')
-            .and('have.text',this.data.faq_menu_title_small_path)
+            .and('have.text',this.data.work_with_us_menu_title_small_path_value)
     })
 
-    it('Your Privacy submenu has correct text and url', function() {
+    it('Community submenu has correct text and url', function() {
         const header = new Header() 
         cy.clickMobileHamburgerMenu()
         cy.wait(1000)
-        header.getCustomerSupportMenuMobile()
+        header.getAboutUsMenuMobile()
             .click()
         cy.wait(1000)
         //Verify the URL is correct
-        cy.get('#nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item')
             .scrollIntoView({ duration: 1000 })
-        cy.get('#nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item')
             .should('be.visible')
-            .and('have.attr' ,'href',this.data.your_privacy_menu_a_path_value)
+            .and('have.attr' ,'href',this.data.community_menu_a_path_value)
         //Verify the icon is correct
-        cy.get('#nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item > img')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item > img')
             .should('be.visible')
-            .and('have.attr', 'src',this.data.your_privacy_menu_icon_path_value)
+            .and('have.attr', 'src',this.data.community_menu_icon_path_value)
         //Verify the title is correct
-        cy.get('#nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item > :nth-child(2) > .nav__title')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item > :nth-child(2) > .nav__title')
             .should('be.visible')
-            .and('have.text',this.data.your_privacy_menu_title_path_value)
+            .and('have.text',this.data.community_menu_title_path_value)
         //Verify the small title is correct
-        cy.get('#nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item > :nth-child(2) > small')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .nav__sub-nav > ul > :nth-child(5) > .js-nav-item > :nth-child(2) > small')
             .should('be.visible')
-            .and('have.text',this.data.your_privacy_menu_title_small_path)
+            .and('have.text',this.data.community_menu_title_small_path_value)
     })
 
-    it('Click and close Customer Support menu menu is working', function() {
+    it('Click and close About Us menu menu is working', function() {
         const header = new Header() 
         cy.clickMobileHamburgerMenu()
         cy.wait(1000)
-        header.getCustomerSupportMenuMobile()
+        header.getAboutUsMenuMobile()
             .click()
         cy.wait(1000)
-        cy.get('.nav-mobile #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c .nav__sub-nav .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .js-sub-nav')
             .should('be.visible')
         cy.get('.header .js-nav-toggle')
             .click()
         cy.wait(2000)
-        cy.get('.nav-mobile #nav-item-95932efc-2c60-467a-8b90-909b0efdbe9c #nav-mega-menu-95932efc-2c60-467a-8b90-909b0efdbe9c .nav__sub-nav .js-nav-item')
+        cy.get(':nth-child(2) > #nav-item-db628576-1eda-4a91-b67a-8982c7fc0764 > #nav-mega-menu-db628576-1eda-4a91-b67a-8982c7fc0764 > .js-sub-nav')
             .should('not.be.visible')
     })     
 })

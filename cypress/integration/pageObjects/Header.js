@@ -104,6 +104,9 @@ class Header {
         return cy.get('.js-nav-mobile > ul > li#nav-item-f0d0bf67-3cbd-479f-b1b6-c103f49f11ac')
     }
 
+    getAboutUsMenuMobile(){
+        return cy.get('.js-nav-mobile > ul > li#nav-item-db628576-1eda-4a91-b67a-8982c7fc0764')
+    }
 }
 
 export default Header;
