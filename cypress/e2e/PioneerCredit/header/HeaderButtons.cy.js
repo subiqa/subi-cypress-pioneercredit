@@ -1,10 +1,10 @@
 /// <reference types="Cypress" />
-import Header from '../../integration/pageObjects/Header'
+import Header from '../../../integration/pageObjectsPioneerCredit/Header'
 
 describe('Header Button Links - Desktop', function() 
 {
     beforeEach(function () {
-        cy.fixture('pioneercreditheader').then(function (data) {
+        cy.fixture('PioneerCredit/pioneercreditheader').then(function (data) {
           this.data = data;
         })
         cy.viewport(1512,900)
@@ -32,7 +32,7 @@ describe('Header Button Links - Desktop', function()
 describe('Header Button Links - Mobile', function() 
 {
     beforeEach(function () {
-        cy.fixture('pioneercreditheader').then(function (data) {
+        cy.fixture('PioneerCredit/pioneercreditheader').then(function (data) {
           this.data = data;
         })
         cy.viewport('iphone-xr')
